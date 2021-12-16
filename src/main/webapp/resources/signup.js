@@ -22,6 +22,15 @@ signupValues[0].onblur = () => {
 	//testText.style.display = 'none';
 	testText.style.color = 'red';
 	// 
-	testText.innerHTML = '<a href="#">테스트</a>';
-
+	//testText.innerHTML = '<a href="#">테스트</a>';
+	const aTag = document.createElement("a");
+	const text = document.createTextNode("테스트");
+	const href = document.createAttribute("href");
+	aTag.setAttributeNode(href);
+	aTag.href = "#";
+	aTag.append(text);
+	testText.append(aTag);
+	
+	
+	
 }
