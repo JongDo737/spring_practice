@@ -1,10 +1,10 @@
-package com.spring.study.controller;
+package com.spring.study.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spring.study.dto.SignupReqDto;
+import com.spring.study.web.dto.SignupReqDto;
 
 //@Component
 //@Service

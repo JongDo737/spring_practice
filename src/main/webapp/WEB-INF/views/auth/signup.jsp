@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
+
 <body>
 	회원가입페이지
 

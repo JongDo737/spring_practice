@@ -1,7 +1,6 @@
-package com.spring.study.dto;
+package com.spring.study.web.dto;
 
 import lombok.Data;
-
 @Data
 public class SignupReqDto {
 	private String username;
