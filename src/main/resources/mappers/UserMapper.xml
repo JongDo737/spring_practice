@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring.study.domain.user.UserRepository">
+	<select id="getUserAll" resultType="com.spring.study.domain.user.User">
+		select
+			id,
+			username,
+			password,
+			name,
+			email,
+			create_date,
+			update_date
+		from
+			user_mst;		
+	</select>
+	
+	<select id="idCheck" resultType="Integer" parameterType="String">
+		select
+			count(username)
+		from
+			user_mst
+		where
+			username = #{username};
+	</select>
+	
+	<insert id="insertUser" parameterType="com.spring.study.domain.user.User">
+		insert into
+			user_mst
+		values(
+			0,
+			#{username},
+			#{password},
+			#{name},
+			#{email},
+			now(),
+			now()
+		)
+	</insert>
+	
+	<select id="signin" resultType="Integer" parameterType="com.spring.study.domain.user.User" >
+		SELECT  
+			COUNT(um.username) + COUNT(um2.password)
+		FROM  
+			user_mst um 
+			left outer join user_mst um2 on(um2.id = um.id AND um2.password = #{password})
+		where 
+			um.username = #{username};
+	
+	</select>										<!-- 리턴타입 -->
+	<select id="getUserByusername" resultType="com.spring.study.domain.user.User" parameterType="String">
+	<!-- db에서 가져온 값을 user에 담는 거고 파라메터 타입 String이 #{} 매개변수의 자료형임 -->
+		select
+			*
+		from
+			user_mst
+		where
+			username = #{username};
+		
+	</select>
+</mapper>
+
+
+
+
+
