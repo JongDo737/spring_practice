@@ -35,6 +35,7 @@ signupBtn.onclick = () => {
 	
 	let checkFlag = 0;
 	
+	//빈칸 있는지 확인
 	for(let i =0; i<signupInputs.length; i++){
 		checkFlag = isEmpty(signupInputs[i], inputNames[i].textContent);
 		if(checkFlag != 0) return;

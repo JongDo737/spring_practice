@@ -19,8 +19,9 @@ public class AuthServiceImpl implements AuthService {
 	@Autowired
 	private UserRepository userRepository;
 
-	@Override
+	@Override	//SignupRespDto를 반환
 	public SignupRespDto usernameCheck(SignupReqDto signupReqDto) {
+		//select count 니까 1아니면 0이 담김
 		int idCheckCount = userRepository.idCheck(signupReqDto.getUsername());
 		if (idCheckCount == 0) {
 			// 회원가입 가능한 아이디

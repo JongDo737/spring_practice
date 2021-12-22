@@ -13,7 +13,6 @@ public interface AuthService {
 	public boolean signup(SignupReqDto signupReqDto);
 	
 	//signin
-	//제네릭으로 맵을 보내겠다.
 	public SigninRespDto signin(SigninReqDto signinReqDto);
 	
 	public User getUserByusername(String username);
